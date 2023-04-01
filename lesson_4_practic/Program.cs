@@ -9,26 +9,25 @@
 // 23432 -> да
 
 
-// Console.Write("Напишите пятизначное число: ");
-// string num = Console.ReadLine();
+Console.Write("Напишите пятизначное число: ");
+string num = Console.ReadLine();
 
-// SearchFirstLastNum(num);
+SearchFirstLastNum(num);
 
 
-// int SearchFirstLastNum(string x)
-// {
-//     // if(int.Parse(x)>99999 || int.Parse(x)<9999){
-//     //     Console.WriteLine("Не пятизначное число");
-//     //     return 3;
-//     // }
-//     if(x.First() == x.Last()){
-//         Console.WriteLine("Да");
-//         return 1;
-//     }else{
-//         Console.WriteLine("Нет");
-//         return 0;
-//     }
-// }
+int SearchFirstLastNum(string x)
+{
+    for (int i = 0; i < x.Length/2; i++)
+    {    
+        if(int.Parse(x[i].ToString()) != int.Parse(x[x.Length-1-i].ToString())){ //проверка являеться ли числа одинаковы
+            Console.WriteLine("нет");
+            return 0; // вылет из функции при любом не совпадение
+        }
+        
+    }
+    Console.WriteLine("да"); // если небыло не совпадающих чисел значит число палиндромом
+    return 0;
+}
 
 // Задача 21
 
@@ -60,7 +59,7 @@
 //     double finish = Math.Sqrt(Math.Pow((x2-x1),2)+ Math.Pow((y2-y1),2)+ Math.Pow((z2-z1),2));
 //     return finish;
 // }
-
+// 
 
 // Задача 23
 
