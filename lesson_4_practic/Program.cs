@@ -12,21 +12,21 @@
 Console.Write("Напишите пятизначное число: ");
 string num = Console.ReadLine();
 
-SearchFirstLastNum(num);
+if(SearchFirstLastNum(num)){
+    Console.WriteLine("Да");
+}else{
+    Console.WriteLine("Нет");
+}
 
-
-int SearchFirstLastNum(string x)
+bool SearchFirstLastNum(string x)
 {
     for (int i = 0; i < x.Length/2; i++)
     {    
-        if(int.Parse(x[i].ToString()) != int.Parse(x[x.Length-1-i].ToString())){ //проверка являеться ли числа одинаковы
-            Console.WriteLine("нет");
-            return 0; // вылет из функции при любом не совпадение
-        }
-        
+        if(x[i] != x[x.Length-1-i]){ //проверка являеться ли числа одинаковы
+            return false; // вылет из функции при любом не совпадение 
+        }  
     }
-    Console.WriteLine("да"); // если небыло не совпадающих чисел значит число палиндромом
-    return 0;
+    return true;// если небыло не совпадающих чисел значит число палиндромом
 }
 
 // Задача 21
